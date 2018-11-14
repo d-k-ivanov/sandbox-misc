@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  
+  config.vm.provider "virtualbox" do |vb|
+    vb.cpus = "2"
+    vb.memory = "2048"
+  end
+
+  config.vm.provider "hyperv" do |hv|
+    hv.cpus = "2"
+    hv.memory = "2048"
+  end
+
+  (1..2).each do |i|
+    config.vm.define "name-node-#{i}" do |node|
+      node.vm.vmname = "name-node-#{i}"
+      node.vm.provision "shell",
+        inline: "echo hello from node #{i}"
+    end
+  end
+
+  (1..3).each do |i|
+    config.vm.define "data-node-#{i}" do |node|
+      node.vm.vmname = "data-node-#{i}"
+      node.vm.provision "shell",
+        inline: "echo hello from node #{i}"
+    end
+  end
+  
+end

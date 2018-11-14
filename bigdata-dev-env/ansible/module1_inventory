@@ -1,0 +1,19 @@
+# ------------------ Variables ------------------
+[all:vars]
+infra_env=production
+# ansible_python_interpreter=/usr/bin/python2.7
+
+# --------------- Infrastructure ----------------
+# [new-tmp]
+# 172.30.30.2 ansible_port=22
+# 172.30.30.3 ansible_port=22
+
+[module1]
+172.30.30.2 ansible_port=22
+172.30.30.3 ansible_port=22
+
+[docker_swarm_manager]
+172.30.30.2
+
+[docker_swarm_worker]
+172.30.30.3

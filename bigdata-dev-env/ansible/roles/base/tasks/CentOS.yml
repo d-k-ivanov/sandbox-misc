@@ -1,0 +1,48 @@
+---
+- name: Install Extra Packages for Enterprise Linux repository (EPEL)
+  yum: name=epel-release state=present
+
+- name: Ensure common packages are installed
+  yum: name={{ item }} state=present
+  loop:
+    - bash-completion             # programmable completion functions for bash
+    - bridge-utils                # Utilities for configuring the Linux Ethernet bridge
+    - curl                        # A utility for getting files from remote servers
+    - epel-release                # Extra Packages for Enterprise Linux repository configuration
+    - ethtool                     # Settings tool for Ethernet NICs
+    - git                         # Fast Version Control System
+    - htop                        # Interactive process viewer
+    - httpd-tools                 # Tools for use with the Apache HTTP Server
+    - iotop                       # Top like utility for I/O
+    - iperf3                      # Measurement tool for TCP/UDP bandwidth performance
+    - iptstate                    # A top-like display of IP Tables state table entries
+    - irqbalance                  # IRQ balancing daemon
+    - jq                          # Command-line JSON processors
+    - mc                          # Midnight Commander - a powerful file manager
+    - mlocate                     # quickly find files on the filesystem based on their name
+    - mtr                         # Full screen ncurses and X11 traceroute tool
+    - ncdu                        # Ncurses disk usage viewer
+    - pv                          # Shell pipeline element to meter data passing through
+    - python-setuptools           # Easily build and distribute Python packages
+    - rsync                       # A program for synchronizing files over a network
+    - sysfsutils                  # Utilities for interfacing with sysfs
+    - sysstat                     # Collection of performance monitoring tools for Linux
+    - telnet                      # The client program for the Telnet remote login protocol
+    - tcpdump                     # A network traffic monitoring tool
+    - tmux                        # A terminal multiplexer
+    - traceroute                  # Traces the route taken by packets over an IPv4/IPv6 network
+    - tree                        # File system tree viewer
+    - vim                         # Vi IMproved - enhanced vi editor
+    - wget                        # A utility for retrieving files using the HTTP or FTP protocols
+
+- name: Install pip
+  easy_install: name=pip
+
+# Disable SELinux
+- selinux:
+    state: disabled
+
+- name: Set SELinux in permissive mode until the machine is rebooted
+  command: setenforce 0
+  ignore_errors: true
+  changed_when: false

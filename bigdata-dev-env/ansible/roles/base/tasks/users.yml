@@ -1,0 +1,17 @@
+---
+- name: Ensure that basic groups exist
+  group: name={{ item }} state=present
+  loop:
+    - sudo
+    - wheel
+
+- name: Adding users
+  user: name="{{ item.value.username }}" shell=/bin/bash groups=sudo,wheel
+  loop: "{{ q('dict', users) }}"
+
+- name: Adding Authorized key users
+  authorized_key: user="{{ item.value.username }}" key="{{ item.value.key }}"
+  loop: "{{ q('dict', users) }}"
+
+- name: Passwordless sudo
+  lineinfile: dest=/etc/sudoers state=present regexp='^%sudo' line='%sudo ALL=(ALL:ALL) NOPASSWD:ALL' validate='visudo -cf %s'
