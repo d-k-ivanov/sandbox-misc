@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(cpp17indetail)
 
-include(${CMAKE_SOURCE_DIR}/include/arch.cmake)
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+include(detect_architecture)
 target_architecture(ARCHITECTURE)
 
 if(${ARCHITECTURE} MATCHES "x86_64")
@@ -28,5 +29,4 @@ else ()
 endif () 
 
 include_directories(${CMAKE_BINARY_DIR}/include)
-
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
