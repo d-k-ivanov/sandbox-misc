@@ -1,1 +1,2 @@
-add_executable(0_map map.cpp)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/0_quick_start)
+add_executable(map_demo map_demo.cpp)
