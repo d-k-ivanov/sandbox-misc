@@ -16,8 +16,8 @@ int main(int argc, char* argv[])
 {
     simple_struct1<int> x11;
     simple_struct2<int> x12;
-    simple_struct1<double> x21;
-    simple_struct2<double> x22;
+    //simple_struct1<double> x21;
+    //simple_struct2<double> x22;
 
     std::system("pause");
     return 0;
