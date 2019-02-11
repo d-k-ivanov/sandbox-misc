@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(cpp17indetail)
 
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 include(detect_architecture)
 target_architecture(ARCHITECTURE)
