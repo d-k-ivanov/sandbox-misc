@@ -1,3 +1,7 @@
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/1_fixes_and_deprecations)
 add_executable(direct-list-initialisation "direct-list-initialisation.cpp")
 add_executable(silent_assert "silent_assert.cpp")
+add_executable(for_range_loop_14_1 "for_range_loop_14_1.cpp")
+add_executable(for_range_loop_17_1 "for_range_loop_17_1.cpp")
+add_executable(for_range_loop_17_2 "for_range_loop_17_2.cpp")
+add_executable(for_range_loop_17_3 "for_range_loop_17_3.cpp")
