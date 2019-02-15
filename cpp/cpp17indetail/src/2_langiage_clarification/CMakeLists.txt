@@ -1,0 +1,2 @@
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/2_langiage_clarification)
+add_executable(evaluation_order "evaluation_order.cpp")
