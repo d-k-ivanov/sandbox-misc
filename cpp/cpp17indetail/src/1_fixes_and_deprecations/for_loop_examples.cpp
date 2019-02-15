@@ -11,7 +11,6 @@ int main()
         if (n == 5)
             break;
     }
-        
 
     std::cout << '\n';
     std::system("pause");
