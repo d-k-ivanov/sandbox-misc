@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 class Queue
 {
@@ -13,7 +14,7 @@ public:
         std::cout << "Inserting float: " << f << '\n';
         return *this;
     }
-    Queue& insertStr(char* c)
+    Queue& insertStr(std::string c)
     {
         std::cout << "Inserting string: " << c << '\n';
         return *this;
@@ -32,7 +33,7 @@ float getFloat()
     return 3.14159265359f;
 }
 
-char* getStr()
+std::string getStr()
 {
     std::cout << "<< String generator >> \n";
     return "Hello World!";
