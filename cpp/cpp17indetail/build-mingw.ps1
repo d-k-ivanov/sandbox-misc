@@ -21,3 +21,4 @@ g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/2_language_clarification/copy_eli
 
 New-Item -Path bin/Release/3_general_features -ItemType Directory -Force
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/structured_bindings.exe              src/3_general_features/structured_bindings.cpp              -mconsole -lgdi32
+g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/structured_bindings_custom.exe       src/3_general_features/structured_bindings_custom.cpp       -mconsole -lgdi32
