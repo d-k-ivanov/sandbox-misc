@@ -1,3 +1,4 @@
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/3_general_features)
 add_executable(structured_bindings "structured_bindings.cpp")
 add_executable(structured_bindings_custom "structured_bindings_custom.cpp")
+add_executable(init_if_and_switch "init_if_and_switch.cpp")
