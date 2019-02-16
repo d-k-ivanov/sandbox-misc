@@ -23,3 +23,4 @@ New-Item -Path bin/Release/3_general_features -ItemType Directory -Force
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/structured_bindings.exe              src/3_general_features/structured_bindings.cpp              -mconsole -lgdi32
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/structured_bindings_custom.exe       src/3_general_features/structured_bindings_custom.cpp       -mconsole -lgdi32
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/init_if_and_switch.exe               src/3_general_features/init_if_and_switch.cpp               -mconsole -lgdi32
+g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/inline_var.exe                       src/3_general_features/inline_var.cpp                       -mconsole -lgdi32
