@@ -18,3 +18,6 @@ g++ --std=c++14 -O3 -DNDEBUG -s -o bin/Release/2_language_clarification/copy_eli
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/2_language_clarification/copy_elision17.exe             src/2_language_clarification/copy_elision.cpp               -mconsole -lgdi32
 #g++ --std=c++14 -O3 -DNDEBUG -s -o bin/Release/2_language_clarification/copy_elision_non_movable.exe   src/2_language_clarification/copy_elision_non_movable.cpp   -mconsole -lgdi32
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/2_language_clarification/copy_elision_non_movable.exe   src/2_language_clarification/copy_elision_non_movable.cpp   -mconsole -lgdi32
+
+New-Item -Path bin/Release/3_general_features -ItemType Directory -Force
+g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/structured_bindings.exe              src/3_general_features/structured_bindings.cpp              -mconsole -lgdi32
