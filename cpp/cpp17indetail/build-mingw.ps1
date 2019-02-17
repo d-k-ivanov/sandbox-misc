@@ -24,3 +24,5 @@ g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/structured_bin
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/structured_bindings_custom.exe       src/3_general_features/structured_bindings_custom.cpp       -mconsole -lgdi32
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/init_if_and_switch.exe               src/3_general_features/init_if_and_switch.cpp               -mconsole -lgdi32
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/inline_var.exe                       src/3_general_features/inline_var.cpp                       -mconsole -lgdi32
+g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/lambda_constexpr.exe                 src/3_general_features/lambda_constexpr.cpp                 -mconsole -lgdi32
+g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/nested_ns.exe                        src/3_general_features/nested_ns.cpp                        -mconsole -lgdi32
