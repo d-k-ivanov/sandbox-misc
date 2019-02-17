@@ -26,3 +26,5 @@ g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/init_if_and_sw
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/inline_var.exe                       src/3_general_features/inline_var.cpp                       -mconsole -lgdi32
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/lambda_constexpr.exe                 src/3_general_features/lambda_constexpr.cpp                 -mconsole -lgdi32
 g++ --std=c++17 -O3 -DNDEBUG -s -o bin/Release/3_general_features/nested_ns.exe                        src/3_general_features/nested_ns.cpp                        -mconsole -lgdi32
+
+New-Item -Path bin/Release/4_templates -ItemType Directory -Force
