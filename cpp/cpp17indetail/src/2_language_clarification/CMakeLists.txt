@@ -6,3 +6,22 @@ set_target_properties(copy_elision14 PROPERTIES CXX_STANDARD 14 CXX_EXTENSIONS O
 add_executable(copy_elision17 "copy_elision.cpp")
 add_executable(copy_elision_non_movable "copy_elision_non_movable.cpp")
 #add_executable(exceptions "exceptions.cpp")
+
+
+if(NOT TARGET 2_language_clarification)
+    add_custom_target(2_language_clarification)
+    add_dependencies(2_language_clarification evaluation_order)
+    add_dependencies(2_language_clarification copy_elision14)
+    add_dependencies(2_language_clarification copy_elision17)
+    add_dependencies(2_language_clarification copy_elision_non_movable)
+endif()
+
+set_target_properties (
+    2_language_clarification
+    evaluation_order
+    copy_elision14
+    copy_elision17
+    copy_elision_non_movable
+    PROPERTIES
+    FOLDER 2_language_clarification
+)

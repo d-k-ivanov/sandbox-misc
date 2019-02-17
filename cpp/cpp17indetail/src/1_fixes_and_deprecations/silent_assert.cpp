@@ -14,8 +14,8 @@ struct simple_struct2
 
 int main(int argc, char* argv[])
 {
-    simple_struct1<int> x11;
-    simple_struct2<int> x12;
+    [[maybe_unused]]simple_struct1<int> x11;
+    [[maybe_unused]]simple_struct2<int> x12;
     //simple_struct1<double> x21;
     //simple_struct2<double> x22;
 

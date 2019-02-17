@@ -13,3 +13,17 @@ file(GLOB_RECURSE SRC_PRINT
 
 source_group("Print" FILES ${SRC_PRINT})
 add_executable(print_demo ${SRC_PRINT})
+
+if(NOT TARGET 0_quick_start)
+    add_custom_target(0_quick_start)
+    add_dependencies(0_quick_start map_demo)
+    add_dependencies(0_quick_start print_demo)
+endif()
+
+set_target_properties (
+    0_quick_start
+    map_demo
+    print_demo
+    PROPERTIES
+    FOLDER 0_quick_start
+)
