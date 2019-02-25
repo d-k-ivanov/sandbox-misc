@@ -1,0 +1,12 @@
+# IDE
+.idea
+.vs
+.vscode
+
+vuln
+vuln2
+vuln.exe
+vuln2.exe
+
+*.o
+*.bin
