@@ -63,7 +63,7 @@ _ZNSt9bad_allocC1Ev:
 	.def	_ZnwySt11align_val_t;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZnwySt11align_val_t
 _ZnwySt11align_val_t:
-.LFB1863:
+.LFB1868:
 	pushq	%rbp
 	.seh_pushreg	%rbp
 	pushq	%rbx
@@ -132,7 +132,7 @@ _ZnwySt11align_val_t:
 	.def	_ZdlPvySt11align_val_t;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZdlPvySt11align_val_t
 _ZdlPvySt11align_val_t:
-.LFB1864:
+.LFB1869:
 	pushq	%rbp
 	.seh_pushreg	%rbp
 	movq	%rsp, %rbp
@@ -176,13 +176,13 @@ _ZdlPvySt11align_val_t:
 	.def	__gxx_personality_seh0;	.scl	2;	.type	32;	.endef
 	.seh_handler	__gxx_personality_seh0, @unwind, @except
 	.seh_handlerdata
-.LLSDA1864:
+.LLSDA1869:
 	.byte	0xff
 	.byte	0xff
 	.byte	0x1
-	.uleb128 .LLSDACSE1864-.LLSDACSB1864
-.LLSDACSB1864:
-.LLSDACSE1864:
+	.uleb128 .LLSDACSE1869-.LLSDACSB1869
+.LLSDACSB1869:
+.LLSDACSE1869:
 	.text
 	.seh_endproc
 	.section .rdata,"dr"
@@ -193,7 +193,7 @@ _ZdlPvySt11align_val_t:
 	.def	_ZdlPvSt11align_val_t;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZdlPvSt11align_val_t
 _ZdlPvSt11align_val_t:
-.LFB1865:
+.LFB1870:
 	pushq	%rbp
 	.seh_pushreg	%rbp
 	movq	%rsp, %rbp
@@ -228,13 +228,13 @@ _ZdlPvSt11align_val_t:
 	ret
 	.seh_handler	__gxx_personality_seh0, @unwind, @except
 	.seh_handlerdata
-.LLSDA1865:
+.LLSDA1870:
 	.byte	0xff
 	.byte	0xff
 	.byte	0x1
-	.uleb128 .LLSDACSE1865-.LLSDACSB1865
-.LLSDACSB1865:
-.LLSDACSE1865:
+	.uleb128 .LLSDACSE1870-.LLSDACSB1870
+.LLSDACSB1870:
+.LLSDACSE1870:
 	.text
 	.seh_endproc
 	.def	__main;	.scl	2;	.type	32;	.endef
@@ -256,7 +256,7 @@ _ZdlPvSt11align_val_t:
 	.def	main;	.scl	2;	.type	32;	.endef
 	.seh_proc	main
 main:
-.LFB1866:
+.LFB1871:
 	pushq	%rbp
 	.seh_pushreg	%rbp
 	movq	%rsp, %rbp
