@@ -8,6 +8,15 @@ struct City {
     lon: f32,
 }
 
+impl Request {
+    fn pub fn new() -> Self {
+        Self {  }
+    }() {
+        
+    }
+    
+}
+
 impl Display for City {
     // `f` is a buffer, this method must write the formatted string into it
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
