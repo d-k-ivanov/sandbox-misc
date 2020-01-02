@@ -1,5 +1,0 @@
-add_subdirectory("0_quick_start")
-add_subdirectory("1_fixes_and_deprecations")
-add_subdirectory("2_language_clarification")
-add_subdirectory("3_general_features")
-add_subdirectory("4_templates")
