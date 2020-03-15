@@ -5,6 +5,7 @@ class Item
 
     def initialize
         @price = 30
+        @weight = 1000
     end
 
     def price
@@ -13,6 +14,14 @@ class Item
 
     def price=(price_value)
         @price = price_value
+    end
+
+    def weight
+        @weight
+    end
+
+    def weight=(weight_value)
+        @weight = weight_value
     end
 
 
@@ -26,6 +35,10 @@ item3 = Item.new
 puts item1.price
 puts item2.price
 puts item3.price
+
+puts item1.weight
+puts item2.weight
+puts item3.weight
 
 puts "------------------------------------------------------------"
 
