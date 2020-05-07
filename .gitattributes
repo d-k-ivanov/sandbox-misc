@@ -21,3 +21,5 @@
 *.psd binary
 *.spl binary
 *.sys binary
+*.wav binary
+		
