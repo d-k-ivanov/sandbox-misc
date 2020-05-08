@@ -15,6 +15,10 @@ public class Player : KinematicBody2D
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _PhysicsProcess(float delta)
     {
-        GD.Print("PProcess...");
+        var motion = new Vector2();
+        motion.x = Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left");
+        motion.y = Input.GetActionStrength("ui_down") - Input.GetActionStrength("ui_up");
+
+        MoveAndCollide(motion.Normalized() * speed * delta);
     }
 }
