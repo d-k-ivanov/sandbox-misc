@@ -1,0 +1,3 @@
+name: pulumi-dotnet-01
+runtime: dotnet
+description: A minimal AWS C# Pulumi program
