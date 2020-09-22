@@ -1,0 +1,3 @@
+name: pulumi-fsharp-01
+runtime: dotnet
+description: A minimal AWS F# Pulumi program
