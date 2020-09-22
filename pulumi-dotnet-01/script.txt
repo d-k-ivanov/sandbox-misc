@@ -2,6 +2,7 @@ dotnet build -nologo .
 pulumi up
 pulumi destroy
 
+curl $(pulumi stack output BucketEndpoint)
 
 # Pulumi - Modern Infrastructure as Code
 #
