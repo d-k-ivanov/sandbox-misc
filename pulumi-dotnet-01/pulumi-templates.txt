@@ -1,0 +1,62 @@
+alicloud-csharp             A minimal AliCloud C# Pulumi program
+alicloud-fsharp             A minimal AliCloud F# Pulumi program
+alicloud-go                 A minimal AliCloud Go Pulumi program
+alicloud-javascript         A minimal AliCloud JavaScript Pulumi program
+alicloud-python             A minimal AliCloud Python Pulumi program
+alicloud-typescript         A minimal AliCloud TypeScript Pulumi program
+alicloud-visualbasic        A minimal AliCloud VB.NET Pulumi program
+aws-csharp                  A minimal AWS C# Pulumi program
+aws-fsharp                  A minimal AWS F# Pulumi program
+aws-go                      A minimal AWS Go Pulumi program
+aws-javascript              A minimal AWS JavaScript Pulumi program
+aws-python                  A minimal AWS Python Pulumi program
+aws-typescript              A minimal AWS TypeScript Pulumi program
+aws-visualbasic             A minimal AWS VB.NET Pulumi program
+azure-csharp                A minimal Azure C# Pulumi program
+azure-fsharp                A minimal Azure F# Pulumi program
+azure-go                    A minimal Azure Go Pulumi program
+azure-javascript            A minimal Azure JavaScript Pulumi program
+azure-nextgen-csharp        A minimal Azure NextGen C# Pulumi program
+azure-nextgen-go            A minimal Azure NextGen Go Pulumi program
+azure-nextgen-python        A minimal Azure NextGen Python Pulumi program
+azure-nextgen-typescript    A minimal Azure NextGen TypeScript Pulumi program
+azure-python                A minimal Azure Python Pulumi program
+azure-typescript            A minimal Azure TypeScript Pulumi program
+azure-visualbasic           A minimal Azure VB.NET Pulumi program
+csharp                      A minimal C# Pulumi program
+digitalocean-go             A minimal DigitalOcean Go Pulumi program
+digitalocean-javascript     A minimal DigitalOcean JavaScript Pulumi program
+digitalocean-python         A minimal DigitalOcean Python Pulumi program
+digitalocean-typescript     A minimal DigitalOcean TypeScript Pulumi program
+fsharp                      A minimal F# Pulumi program
+gcp-csharp                  A minimal GCP C# Pulumi program
+gcp-fsharp                  A minimal GCP F# Pulumi program
+gcp-go                      A minimal Google Cloud Go Pulumi program
+gcp-javascript              A minimal Google Cloud JavaScript Pulumi program
+gcp-python                  A minimal Google Cloud Python Pulumi program
+gcp-typescript              A minimal Google Cloud TypeScript Pulumi program
+gcp-visualbasic             A minimal GCP VB.NET Pulumi program
+go                          A minimal Go Pulumi program
+hello-aws-javascript        A simple AWS serverless JavaScript Pulumi program
+javascript                  A minimal JavaScript Pulumi program
+kubernetes-csharp           A minimal Kubernetes C# Pulumi program
+kubernetes-fsharp           A minimal Kubernetes F# Pulumi program
+kubernetes-go               A minimal Kubernetes Go Pulumi program
+kubernetes-javascript       A minimal Kubernetes JavaScript Pulumi program
+kubernetes-python           A minimal Kubernetes Python Pulumi program
+kubernetes-typescript       A minimal Kubernetes TypeScript Pulumi program
+linode-go                   A minimal Linode Go Pulumi program
+linode-javascript           A minimal Linode JavaScript Pulumi program
+linode-python               A minimal Linode Python Pulumi program
+linode-typescript           A minimal Linode TypeScript Pulumi program
+openstack-go                A minimal OpenStack Go Pulumi program
+openstack-javascript        A minimal OpenStack JavaScript Pulumi program
+openstack-python            A minimal OpenStack Python Pulumi program
+openstack-typescript        A minimal OpenStack TypeScript Pulumi program
+packet-go                   A minimal Packet.net Go Pulumi program
+packet-javascript           A minimal Packet.net JavaScript Pulumi program
+packet-python               A minimal Packet.net Python Pulumi program
+packet-typescript           A minimal Packet.net TypeScript Pulumi program
+python                      A minimal Python Pulumi program
+typescript                  A minimal TypeScript Pulumi program
+visualbasic                 A minimal VB.NET Pulumi program
