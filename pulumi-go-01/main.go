@@ -1,6 +1,8 @@
 package main
 
 import (
+    "io/ioutil"
+
     "github.com/pulumi/pulumi-aws/sdk/v3/go/aws/s3"
     "github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
@@ -15,6 +17,20 @@ func main() {
 
         // Export the name of the bucket
         ctx.Export("bucketName", bucket.ID())
+
+        htmlContent, err := ioutil.ReadFile("site/index.html")
+        if err != nil {
+            return err
+        }
+
+        _, err = s3.NewBucketObject(ctx, "index.html", &s3.BucketObjectArgs{
+            Bucket:  bucket.ID(),
+            Content: pulumi.String(string(htmlContent)),
+        })
+        if err != nil {
+            return err
+        }
+
         return nil
     })
 }
