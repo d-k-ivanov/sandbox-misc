@@ -1,15 +1,33 @@
 using Pulumi;
 using Pulumi.Aws.S3;
 
+using System.IO;
+
 class MyStack : Stack
 {
     public MyStack()
     {
         // Create an AWS resource (S3 Bucket)
-        var bucket = new Bucket("pulumi-dotnet-01");
+        var bucket = new Bucket("pulumi-dotnet-01", new BucketArgs
+        {
+            Acl = "private",
+            Tags =
+            {
+                { "Environment", "Dev" },
+                { "Name", "pulumi-dotnet-01" },
+            },
+        });
 
         // Export the name of the bucket
         this.BucketName = bucket.Id;
+
+        var filePath        = Path.GetFullPath("./site/index.html");
+        var hmtlString      = File.ReadAllText(filePath);
+        var bucketObject    = new BucketObject("index.html", new BucketObjectArgs
+        {
+            Bucket = bucket.BucketName,
+            Content = hmtlString,
+        });
     }
 
     [Output]
