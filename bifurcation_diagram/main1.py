@@ -10,9 +10,11 @@ def logistic(r, x):
     return r * x * (1 - x)
 
 
-x = np.linspace(0, 1)
-fig, ax = plt.subplots(1, 1)
-ax.plot(x, logistic(2, x), 'k')
+def logistic_curve():
+    x = np.linspace(0, 1)
+    fig, ax = plt.subplots(1, 1)
+    ax.plot(x, logistic(2, x), 'k')
+    fig.canvas.set_window_title('Logistic curve')
 
 
 def plot_system(r, x0, n, ax=None):
@@ -41,47 +43,49 @@ def plot_system(r, x0, n, ax=None):
     ax.set_ylim(0, 1)
     ax.set_title(f"$r={r:.1f}, \, x_0={x0:.1f}$")
 
+def logistic_curve_variations():
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6), sharey=True)
+    fig.canvas.set_window_title('Logistic curve variations')
+    plot_system(2.5, .1, 10, ax=ax1)
+    plot_system(3.5, .1, 10, ax=ax2)
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6),
-                               sharey=True)
-plot_system(2.5, .1, 10, ax=ax1)
-plot_system(3.5, .1, 10, ax=ax2)
+def simulate_system(values, space_begin, space_end):
+    n = values
+    r = np.linspace(space_begin, space_end, n)
+    iterations = 1000
+    last = 100
 
-n = 10000
-r = np.linspace(2.5, 4.0, n)
-iterations = 1000
-last = 100
+    x = 1e-5 * np.ones(n)
+    lyapunov = np.zeros(n)
 
-x = 1e-5 * np.ones(n)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 9), sharex=True)
+    for i in range(iterations):
+        x = logistic(r, x)
+        # We compute the partial sum of the
+        # Lyapunov exponent.
+        lyapunov += np.log(abs(r - 2 * r * x))
+        # We display the bifurcation diagram.
+        if i >= (iterations - last):
+            ax1.plot(r, x, ',k', alpha=.25)
+    ax1.set_xlim(space_begin, space_end)
+    ax1.set_title("Bifurcation diagram")
 
-lyapunov = np.zeros(n)
+    # We display the Lyapunov exponent.
+    # Horizontal line.
+    ax2.axhline(0, color='k', lw=.5, alpha=.5)
 
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 9),
-                               sharex=True)
-for i in range(iterations):
-    x = logistic(r, x)
-    # We compute the partial sum of the
-    # Lyapunov exponent.
-    lyapunov += np.log(abs(r - 2 * r * x))
-    # We display the bifurcation diagram.
-    if i >= (iterations - last):
-        ax1.plot(r, x, ',k', alpha=.25)
-ax1.set_xlim(2.5, 4)
-ax1.set_title("Bifurcation diagram")
+    # Negative Lyapunov exponent.
+    ax2.plot(r[lyapunov < 0], lyapunov[lyapunov < 0] / iterations, '.k', alpha=.5, ms=.5)
 
-# We display the Lyapunov exponent.
-# Horizontal line.
-ax2.axhline(0, color='k', lw=.5, alpha=.5)
-# Negative Lyapunov exponent.
-ax2.plot(r[lyapunov < 0],
-         lyapunov[lyapunov < 0] / iterations,
-         '.k', alpha=.5, ms=.5)
-# Positive Lyapunov exponent.
-ax2.plot(r[lyapunov >= 0],
-         lyapunov[lyapunov >= 0] / iterations,
-         '.r', alpha=.5, ms=.5)
-ax2.set_xlim(2.5, 4)
-ax2.set_ylim(-2, 1)
-ax2.set_title("Lyapunov exponent")
-plt.tight_layout()
+    # Positive Lyapunov exponent.
+    ax2.plot(r[lyapunov >= 0], lyapunov[lyapunov >= 0] / iterations, '.r', alpha=.5, ms=.5)
+
+    ax1.set_xlim(space_begin, space_end)
+    ax2.set_ylim(-2, 1)
+    ax2.set_title("Lyapunov exponent")
+    plt.tight_layout()
+
+# logistic_curve()
+# logistic_curve_variations()
+simulate_system(10000, 2.5, 4.0)
 plt.show()
