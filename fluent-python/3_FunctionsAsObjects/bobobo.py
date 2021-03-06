@@ -3,7 +3,7 @@
 
 # pip install bobo
 # bobo -f .\3_FunctionsAsObjects\bobobo.py
-# curl http://localhost:8080/?person=Dmitriy
+# curl http://localhost:8080/?person=Dmitry
 
 import bobo
 
