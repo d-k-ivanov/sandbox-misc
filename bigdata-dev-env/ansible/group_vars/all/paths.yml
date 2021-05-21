@@ -1,5 +1,0 @@
----
-paths:
-  datadir: "/var/data"
-  backupdir: "/var/data/backup"
-  
