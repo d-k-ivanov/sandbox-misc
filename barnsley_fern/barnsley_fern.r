@@ -1,21 +1,21 @@
 # Barnsley's Fern
 
 # create function of the probability and the current point
-fractal_fern2 <- function(x, p){
-  if (p <= 0.01) {
-    m <- matrix(c(0, 0, 0, .16), 2, 2)
-    f <- c(0, 0)
-  } else if (p <= 0.86) {
-    m <- matrix(c(.85, -.04, .04, .85), 2, 2)
-    f <- c(0, 1.6)
-  } else if (p <= 0.93) {
-    m <- matrix(c(.2, .23, -.26, .22), 2, 2)
-    f <- c(0, 1.6)
-  } else {
-    m <- matrix(c(-.15, .26, .28, .24), 2, 2)
-    f <- c(0, .44)
-  }
-  m %*% x + f
+fractal_fern2 <- function(x, p) {
+    if (p <= 0.01) {
+      m <- matrix(c(0, 0, 0, .16), 2, 2)
+      f <- c(0, 0)
+    } else if (p <= 0.86) {
+      m <- matrix(c(.85, -.04, .04, .85), 2, 2)
+      f <- c(0, 1.6)
+    } else if (p <= 0.93) {
+      m <- matrix(c(.2, .23, -.26, .22), 2, 2)
+      f <- c(0, 1.6)
+    } else {
+      m <- matrix(c(-.15, .26, .28, .24), 2, 2)
+      f <- c(0, .44)
+    }
+    m %*% x + f
 }
 
 # how many reps determines how detailed the fern will be
