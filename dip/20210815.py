@@ -10,14 +10,11 @@ class MyStack:
     def __init__(self):
         self.stack = []
 
-
     def push(self, val):
         self.stack.append(val)
 
-
     def pop(self):
         self.stack.pop()
-
 
     def max(self):
         if len(self.stack):
