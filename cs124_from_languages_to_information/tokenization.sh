@@ -15,4 +15,11 @@ tr 'A-Z' 'a-z' < ./corpuses/low-low-bpe.txt | tr -sc 'A-Za-z' '\n' | sort | uniq
 tr 'A-Z' 'a-z' < ./corpuses/shakespeare.txt | sed -r 's/[[:blank:]]+/_/g' | less
 tr 'A-Z' 'a-z' < ./corpuses/shakespeare.txt | sed -r 's/[[:blank:]]+/_/g' | sed 's/./&\n/g' | sort | uniq -c
 tr 'A-Z' 'a-z' < ./corpuses/low-low-bpe.txt | sed -r 's/[[:blank:]]+/_/g' | sed 's/./&\n/g' | sort | uniq -c
+tr 'A-Z' 'a-z' < ./corpuses/low-low-bpe.txt | sed -r 's/[[:blank:]]+/_/g' | sed 's/./&\n/g' | sort | uniq -c | awk '{print $1,$2}'
+tr 'A-Z' 'a-z' < ./corpuses/low-low-bpe.txt | sed -r 's/[[:blank:]]+/_/g' | sed 's/./&\n/g' | sort | uniq -c | awk '{print $2}'
+
+function bpe()
+{
+
+}
 
