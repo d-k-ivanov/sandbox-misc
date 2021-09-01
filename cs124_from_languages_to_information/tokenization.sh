@@ -23,3 +23,4 @@ function bpe()
 
 }
 
+split -l 17 sonnets.txt
