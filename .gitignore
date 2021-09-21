@@ -1,2 +1,4 @@
 *.dotSettings.user
 .ipynb_checkpoints/
+
+.vagrant/
