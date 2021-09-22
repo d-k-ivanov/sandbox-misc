@@ -8,6 +8,7 @@ python -m pip install --upgrade nltk
 python -m pip install --upgrade numpy
 python -m pip install --upgrade numpy-stl
 python -m pip install --upgrade pandas
+python -m pip install --upgrade ray[default]
 python -m pip install --upgrade seaborn
 python -m pip install --upgrade sklearn
 python -m pip install --upgrade tensorflow

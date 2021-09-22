@@ -1,0 +1,10 @@
+bokeh
+gym
+ipywidgets==6.0.0
+jupyter
+keras
+modin
+opencv-python
+ray[default]==1.6.0
+scipy
+tensorflow
