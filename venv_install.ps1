@@ -6,6 +6,7 @@ python -m pip install --upgrade Keras
 python -m pip install --upgrade matplotlib
 python -m pip install --upgrade nltk
 python -m pip install --upgrade numpy
+python -m pip install --upgrade numpy-stl
 python -m pip install --upgrade pandas
 python -m pip install --upgrade seaborn
 python -m pip install --upgrade sklearn
