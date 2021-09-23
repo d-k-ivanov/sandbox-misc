@@ -5,6 +5,6 @@ jupyter
 keras
 modin
 opencv-python
-ray[default]==1.6.0
+ray[all]==1.6.0
 scipy
 tensorflow
