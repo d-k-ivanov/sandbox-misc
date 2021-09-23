@@ -55,24 +55,24 @@ Vagrant.configure(2) do |config|
             # Setup
             node.vm.provision "shell", inline: <<-SHELL
                 echo Provisioning Base Software on raynode#{i}
-                # set -e
-                # hostnamectl set-hostname raynode#{i}
-                # localectl set-locale LANG=en_US.UTF-8
-                # dnf -y update
-                # dnf -y install epel-release
-                # dnf -y install dnf-plugins-core
-                # # dnf config-manager --set-enabled PowerTools
-                # dnf -y update
-                # dnf -y groupinstall 'Development Tools'
-                # dnf -y install libcurl-devel
-                # dnf -y install openssl-devel
-                # dnf -y install python3
-                # dnf -y install wget
-                # # systemctl stop firewalld
-                # # systemctl disable firewalld
-                # # systemctl mask --now firewalld
-                # alternatives --set python /usr/bin/python3
-                # alternatives --auto python
+                set -e
+                hostnamectl set-hostname raynode#{i}
+                localectl set-locale LANG=en_US.UTF-8
+                dnf -y update
+                dnf -y install epel-release
+                dnf -y install dnf-plugins-core
+                # dnf config-manager --set-enabled PowerTools
+                dnf -y update
+                dnf -y groupinstall 'Development Tools'
+                dnf -y install libcurl-devel
+                dnf -y install openssl-devel
+                dnf -y install python3
+                dnf -y install wget
+                # systemctl stop firewalld
+                # systemctl disable firewalld
+                # systemctl mask --now firewalld
+                alternatives --set python /usr/bin/python3
+                alternatives --auto python
             SHELL
 
             # Mounts
