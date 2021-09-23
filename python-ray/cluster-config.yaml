@@ -1,0 +1,46 @@
+cluster_name: pyton-ray-sandbox
+
+provider:
+  type: local
+  head_ip: 172.19.237.22
+  worker_ips: [172.19.237.22, 172.19.239.209]
+
+auth:
+  ssh_user: vagrant
+  ssh_private_key: ~/.vagrant.d/insecure_private_key
+
+min_workers: 2
+max_workers: 2
+upscaling_speed: 1.0
+idle_timeout_minutes: 5
+
+file_mounts: {
+#    "/path1/on/remote/machine": "/path1/on/local/machine",
+#    "/path2/on/remote/machine": "/path2/on/local/machine",
+}
+cluster_synced_files: []
+file_mounts_sync_continuously: False
+
+rsync_exclude:
+  - "**/.git"
+  - "**/.git/**"
+
+rsync_filter:
+  - ".gitignore"
+
+initialization_commands: []
+setup_commands:
+  - if [ $(which ray) ]; then pip uninstall ray -y; fi
+  - pip install -U ray[all]==1.6.0
+
+head_setup_commands: []
+worker_setup_commands: []
+
+head_start_ray_commands:
+  - ray stop
+  - ulimit -c unlimited && ray start --head --port=6379 --autoscaling-config=~/ray_bootstrap_config.yaml
+
+# Command to start ray on worker nodes. You don't need to change this.
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379
