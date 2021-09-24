@@ -30,17 +30,17 @@ rsync_filter:
 
 initialization_commands: []
 setup_commands:
-  - if [ $(which ray) ]; then pip uninstall ray -y; fi
-  - pip install -U ray[all]==1.6.0
+  - if [ $(which ray) ]; then sudo pip3 uninstall ray -y; fi
+  - sudo pip3 install -U ray[all]==1.6.0
 
 head_setup_commands: []
 worker_setup_commands: []
 
 head_start_ray_commands:
-  - ray stop
-  - ulimit -c unlimited && ray start --head --port=6379 --autoscaling-config=~/ray_bootstrap_config.yaml
+  - sudo ray stop
+  - sudo ulimit -c unlimited && sudo ray start --head --port=6379 --dashboard-host "0.0.0.0" --autoscaling-config=~/ray_bootstrap_config.yaml
 
 # Command to start ray on worker nodes. You don't need to change this.
 worker_start_ray_commands:
-  - ray stop
-  - ray start --address=$RAY_HEAD_IP:6379
+  - sudo ray stop
+  - sudo ray start --address=$RAY_HEAD_IP:6379

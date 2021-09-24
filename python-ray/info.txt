@@ -11,3 +11,46 @@ pip install ray[all]==1.6.0
 ==== multi-node ====
 python multinode/script.py
 ray up -y cluster-config.yaml
+
+############## TMP
+ln -fs /usr/bin/2to3-3.8 /usr/bin/2to3;ln -fs /usr/bin/easy_install-3.8 /usr/bin/easy_install;ln -fs /usr/bin/idle3.8 /usr/bin/idle;ln -fs /usr/bin/pip3.8 /usr/bin/pip;ln -fs /usr/bin/pydoc3.8 /usr/bin/pydoc;ln -fs /usr/bin/python3.8 /usr/bin/python;ln -fs /usr/bin/python3.8-config /usr/bin/python-config;
+rm -rf /usr/bin/2to3-3.8;rm -rf /usr/bin/2to3;rm -rf /usr/bin/easy_install-3.8;rm -rf /usr/bin/easy_install;rm -rf /usr/bin/idle3.8;rm -rf /usr/bin/idle;rm -rf /usr/bin/pip3.8;rm -rf /usr/bin/pip;rm -rf /usr/bin/pydoc3.8;rm -rf /usr/bin/pydoc;rm -rf /usr/bin/python3.8;rm -rf /usr/bin/python;rm -rf /usr/bin/python3.8-config;rm -rf /usr/bin/python-config;
+
+ray start --head --dashboard-host "0.0.0.0"
+ray up -y cluster-config.yaml --dashboard-host "0.0.0.0" --no-config-cache
+
+2021-09-23 23:56:51,280 INFO services.py:1263 -- View the Ray dashboard at http://172.19.237.22:8265
+
+--------------------
+Ray runtime started.
+--------------------
+
+Next steps
+  To connect to this Ray runtime from another node, run
+    ray start --address='172.19.237.22:6379' --redis-password='5241590000000000'
+
+  Alternatively, use the following Python code:
+    import ray
+    ray.init(address='auto', _redis_password='5241590000000000')
+
+  To connect to this Ray runtime from outside of the cluster, for example to
+  connect to a remote cluster from your laptop directly, use the following
+  Python code:
+    import ray
+    ray.init(address='ray://<head_node_ip_address>:10001')
+
+  If connection fails, check your firewall settings and network configuration.
+
+  To terminate the Ray runtime, run
+    ray stop
+Shared connection to 172.19.237.22 closed.
+2021-09-23 23:56:52,553 INFO node_provider.py:101 -- ClusterState: Writing cluster state: ['172.19.239.209', '172.19.237.22']
+  New status: up-to-date
+
+Useful commands
+  Monitor autoscaling with
+    ray exec /tmp/cluster-config.yaml 'tail -n 100 -f /tmp/ray/session_latest/logs/monitor*'
+  Connect to a terminal on the cluster head:
+    ray attach /tmp/cluster-config.yaml
+  Get a remote shell to the cluster manually:
+    ssh -o IdentitiesOnly=yes vagrant@172.19.237.22
