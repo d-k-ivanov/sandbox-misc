@@ -2,8 +2,8 @@ cluster_name: python-ray-minimal-manual
 
 provider:
   type: local
-  head_ip: 172.19.237.22
-  worker_ips: [172.19.237.22, 172.19.239.209]
+  head_ip: raynode1
+  worker_ips: [raynode2]
 
 auth:
   ssh_user: vagrant
