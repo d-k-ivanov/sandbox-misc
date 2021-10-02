@@ -1,3 +1,4 @@
+Ray: https://arxiv.org/pdf/1712.05889.pdf
 
 docker pull rayproject/ray-ml:latest-cpu
 

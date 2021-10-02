@@ -1,0 +1,21 @@
+
+## Steps for Ray Multi-Machine Cluster Installation
+
+Install the same Python version across all nodes
+Install the Ray Module and other packages of same version in each VM virtual environment by using a requirements file
+
+[Optional]
+Turn off the firewall on the head node first and then start the ray services.
+    systemctl stop firewalld
+
+Start ray as head in one of the VM and ray starts with some port address along with redis password:
+    ray start --head
+
+Join others worker nodes in cluster:
+    ray start --address='<head node ip>:<head port>' --redis-password='<pwd>'
+
+Connect to Ray cluster with ssh tunneling to Ray Dashboard:
+    ssh -N -f -L localhost:8265:localhost:8265 <user_name>@<head_node_ip>
+
+Stop Ray services
+    ray stop --force
