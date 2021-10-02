@@ -1,0 +1,60 @@
+# ========================= Serial ===================================
+python pi_monte_carlo/monte_carlo_pi.py --num-samples 9999999
+    Estimating Pi in one process with 9999999 samples...
+    pi ~= 3.1418179141817912
+    Finished in: 11.77s
+
+## Linux Mode
+ray up -y cluster_local_minimal.yaml --no-config-cache
+ray rsync-up cluster_local_minimal.yaml monte_carlo/monte_carlo_pi.py monte_carlo/monte_carlo_pi.py
+ray attach cluster_local_minimal.yaml
+RAY_ADDRESS=auto python3 monte_carlo_pi.py --distributed --num-samples 9999999
+
+
+# Windows Mode
+reaynode1> ray up -y cluster_local_minimal.yaml --no-config-cache
+ray rsync-up cluster_local_minimal.yaml monte_carlo/monte_carlo_pi.py monte_carlo/monte_carlo_pi.py
+ray attach cluster_local_minimal.yaml
+
+
+# ========================= 9999999 ===================================
+python pi_monte_carlo/monte_carlo_pi.py --num-samples 9999999 --parallel
+    Estimating Pi using multiprocessing with 9999999 samples...
+    pi ~= 3.110274711027471
+    Finished in: 2.86s
+
+AUTOSCALER_EVENTS=0 RAY_ADDRESS=auto python3 monte_carlo_pi.py --distributed --num-samples 9999999
+    Estimating Pi using ray.util.multiprocessing with 9999999 samples...
+    2021-10-02 14:05:19,791 INFO worker.py:825 -- Connecting to existing Ray cluster at address: 172.21.151.178:6379
+    (autoscaler +0s) Tip: use `ray status` to view detailed autoscaling status. To disable autoscaler event messages, you can set AUTOSCALER_EVENTS=0.
+    (autoscaler +0s) Adding 1 nodes of type local.cluster.node.
+    pi ~= 3.110589911058991
+    Finished in: 2.97s
+
+
+# ========================= 99999999 ===================================
+python pi_monte_carlo/monte_carlo_pi.py --num-samples 99999999 --parallel
+    Estimating Pi using multiprocessing with 99999999 samples...
+    pi ~= 3.138416791384168
+    Finished in: 24.44s
+
+AUTOSCALER_EVENTS=0 RAY_ADDRESS=auto python3 monte_carlo_pi.py --distributed --num-samples 99999999
+    Estimating Pi using ray.util.multiprocessing with 99999999 samples...
+    2021-10-02 14:08:02,438 INFO worker.py:825 -- Connecting to existing Ray cluster at address: 172.21.151.178:6379
+    pi ~= 3.138095511380955
+    Finished in: 27.91s
+
+
+
+# ========================= 999999999 ===================================
+python pi_monte_carlo/monte_carlo_pi.py --num-samples 999999999 --parallel
+    Estimating Pi using multiprocessing with 999999999 samples...
+    pi ~= 3.141275315141275
+    Finished in: 253.84s
+
+
+AUTOSCALER_EVENTS=0 RAY_ADDRESS=auto python3 monte_carlo_pi.py --distributed --num-samples 999999999
+    Estimating Pi using ray.util.multiprocessing with 999999999 samples...
+    2021-10-02 14:29:43,442 INFO worker.py:825 -- Connecting to existing Ray cluster at address: 172.21.151.178:6379
+    pi ~= 3.1412512511412514
+    Finished in: 305.39s
