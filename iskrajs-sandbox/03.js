@@ -11,5 +11,5 @@ function ledAutoFade () {
 }
 
 ledP0.turnOff();
-//btnP3.on('press', pressButton);
-btnP3.on('press', ledAutoFade);
+btnP3.on('press', pressButton);
+//btnP3.on('press', ledAutoFade);
