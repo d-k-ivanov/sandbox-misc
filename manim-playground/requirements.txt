@@ -1,0 +1,3 @@
+manim
+# manimgl
+# git+https://github.com/3b1b/manim.git@v1.7.0
