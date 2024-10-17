@@ -1,5 +1,12 @@
+.idea
+.vs
+.vscode
+
+.vagrant/
+.venv/
+venv/
+
 *.dotSettings.user
 .ipynb_checkpoints/
 
-.vagrant/
 **/tmp/
